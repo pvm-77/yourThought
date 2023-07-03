@@ -104,3 +104,10 @@ blockquote {
 
 
 
+/* Media query for smaller viewports */
+@media screen and (max-width: 768px) {
+  .thought-container {
+    margin: 20px;
+    width: 90%;
+  }
+}
