@@ -6,24 +6,24 @@ const notificationReducer = (state = '', action) => {
     switch (action.type) {
         case 'SET_NOTIFICATION':
 
-            return state;
+            return action.payload;
         case 'REMOVE_NOTIFICATION':
 
-            return state;
+            return action.payload;
         default:
             return state;
     }
 }
-export const setNotification = () => {
+export const setNotification = (notificationMessage) => {
     return {
         type: 'SET_NOTIFICATION',
-        payload: ''
+        payload: notificationMessage
     }
 }
-export const removeNotification = () => {
+export const removeNotification = (notificationMessage) => {
     return {
         type: 'REMOVE_NOTIFICATION',
-        payload: ''
+        payload: notificationMessage,
     }
 }
 export default notificationReducer;

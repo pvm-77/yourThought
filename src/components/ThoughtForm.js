@@ -13,6 +13,9 @@ const ThoughtForm = () => {
         }
         console.log('new thought is ', newThought);
         dispatch(createThought(newThought));
+        // empty fields 
+        e.target.thought.value=''
+        e.target.author.value=''
 
     }
     return (

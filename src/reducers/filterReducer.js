@@ -1,5 +1,5 @@
 
-// filter action
+
 
 
 const filterReducer = (state = '', action) => {
@@ -11,6 +11,8 @@ const filterReducer = (state = '', action) => {
     }
 }
 
+
+// filter action
 export const filterChange = (filterText) => {
     return {
         type: 'SET_FILTER',

@@ -4,9 +4,9 @@ import { useDispatch } from 'react-redux'
 const VisibilityFilter = () => {
     const dispatch=useDispatch();
     const handleChange = (event) => {
-        // input-field value is in variable event.target.value
-        console.log('filter value',event.target.filtertext.value)
-        dispatch(filterChange(event.target.filtertext.value))
+        
+        console.log('filter value',event.target.value)
+        dispatch(filterChange(event.target.value))
 
         
     }
@@ -16,7 +16,7 @@ const VisibilityFilter = () => {
 
     return (
         <div style={style} className='thought-container'>
-            filter <input name='filtertext' onChange={handleChange} placeholder='search thought'/>
+            filter <input  onChange={handleChange} placeholder='search thought'/>
         </div>
     )
 
