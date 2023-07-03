@@ -76,7 +76,7 @@ const Thought = ({ thought, onClick }) => {
 
 
 const ThoughtList = () => {
-    const thoughts = useSelector(state => state);
+    const thoughts = useSelector(state => state.thoughts);
     const dispatch = useDispatch();
 
     return (
