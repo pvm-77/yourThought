@@ -4,6 +4,7 @@ import { addLiketo } from '../reducers/thoughtReducer';
 
 import Thought from './Thought';
 import VisibilityFilter from './VisibilityFilter';
+import { removeNotification, setNotification } from '../reducers/notificationReducer';
 
 
 const ThoughtList = () => {
@@ -21,13 +22,20 @@ const ThoughtList = () => {
     })
 
     const dispatch = useDispatch();
+    const handleLike=(id)=>{
+        dispatch(addLiketo(id))
+        dispatch(setNotification('u have like buddy'));
+        setTimeout(()=>{
+            dispatch(removeNotification(null))
+        },3000)
+    }
 
     return (
         <>
             <VisibilityFilter />
             <h2 style={{ textAlign: 'center' }}>thoughts</h2>
             {thoughts.map(thought =>
-                <Thought key={thought.id} thought={thought} onClick={() => dispatch(addLiketo(thought.id))} />
+                <Thought key={thought.id} thought={thought} onClick={() => handleLike(thought.id)} />
             )}
         </>
     )

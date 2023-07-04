@@ -8,6 +8,9 @@ export const navLinks = [
         title: "Thoughts",
     },
     {
+        id:'createNewThought',title:'createThought'
+    },
+    {
         id: "contact",
         title: "Contact",
     },

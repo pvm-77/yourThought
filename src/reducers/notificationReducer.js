@@ -2,14 +2,14 @@
 // filter action
 
 
-const notificationReducer = (state = '', action) => {
+const notificationReducer = (state = null, action) => {
+    console.log('notice state is ',state,action.type)
     switch (action.type) {
         case 'SET_NOTIFICATION':
-
             return action.payload;
         case 'REMOVE_NOTIFICATION':
 
-            return action.payload;
+            return null;
         default:
             return state;
     }

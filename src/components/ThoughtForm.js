@@ -1,6 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { createThought } from '../reducers/thoughtReducer';
+import {removeNotification, setNotification} from '../reducers/notificationReducer';
 
 const ThoughtForm = () => {
     const dispatch = useDispatch();
@@ -16,6 +17,10 @@ const ThoughtForm = () => {
         // empty fields 
         e.target.thought.value=''
         e.target.author.value=''
+        dispatch(setNotification('congrats have created a new thought'))
+        setTimeout(()=>{
+            dispatch(removeNotification(''))
+        },2000)
 
     }
     return (
