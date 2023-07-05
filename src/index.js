@@ -6,11 +6,15 @@ import { Provider } from 'react-redux';
 // import thoughtReducer from './reducers/thoughtReducer';
 // import { createStore } from 'redux'
 // const store = createStore(thoughtReducer)
-import {store} from './store'
+import { store } from './store'
+import { ThemeProvider } from './contexts/ThemeContext';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Provider store={store}>
-    <App />
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
   </Provider>
 );
 

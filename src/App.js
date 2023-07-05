@@ -13,15 +13,15 @@ import Home from './components/Home';
 import Notification from './components/Notification';
 import { useSelector } from 'react-redux';
 const App = () => {
-  const notificationMessage=useSelector(state=>state.notification)
+  const notificationMessage = useSelector(state => state.notification)
 
   return (
-    <div>
+    <div className='h-full w-full relative '>
       <Router>
         <Navbar />
-       <Notification message={notificationMessage}/>
+        <Notification message={notificationMessage} />
         <Routes>
-        <Route path='/' element={<Home />} />
+          <Route path='/' element={<Home />} />
 
           <Route path='/about' element={<About />} />
           <Route path='/thoughts' element={<ThoughtList />} />
@@ -31,15 +31,8 @@ const App = () => {
           <Route path='/signup' element={<Register />} />
         </Routes>
 
-        <Footer/>
+        <Footer />
       </Router>
-
-
-
-      
-
-     
-
     </div>
   )
 }

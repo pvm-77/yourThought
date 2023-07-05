@@ -58,16 +58,25 @@ import { Link } from 'react-router-dom'
 import { navLinks } from '../constants';
 import menu from '../menu.svg';
 import close from '../close.svg'
+import { BsFillSunFill } from 'react-icons/bs';
+import { BsFillMoonFill } from 'react-icons/bs';
+import { ThemeContext } from '../contexts/ThemeContext';
+import { useContext, useEffect } from 'react';
 const Navbar = () => {
     const [active, setActive] = useState("");
     const [toggle, setToggle] = useState(false);
     const [scrolled, setScrolled] = useState(false)
+    const { theme, toggleTheme } = useContext(ThemeContext);
+    console.log('theme is', theme)
+    useEffect(() => {
+        document.documentElement.style.colorScheme = theme
+    }, [theme]);
     return (
         <>
             <nav className='w-full flex items-center border border-sky-950 py-5  z-20'>
                 <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
                     <Link to='/'>
-                        <image className='w-9 h-9 object-contain' alt='brand' />
+                        {/* <img className='w-9 h-9 object-contain' src='some' alt='brand' /> */}
                         <p className='text-white text-[18px] font-bold cursor-pointer flex'>YourThought
                         </p>
 
@@ -77,6 +86,41 @@ const Navbar = () => {
                             <Link to={`/${nav.id}`}>{nav.title}</Link>
                         </li>)}
                     </ul>
+
+                    {
+                        theme === 'dark' ?
+
+                            <div className="flex">
+                                <button
+                                    type="button"
+                                    aria-label="Use Dark Mode"
+                                    onClick={() => {
+                                        toggleTheme('dark');
+                                    }}
+                                    className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link">
+                                    < BsFillMoonFill style={{ color: 'yellow', width: '32px', height: '32px' }} />
+                                </button>
+                            </div>
+
+
+                            : <div className="flex">
+                                <button
+                                    type="button"
+                                    aria-label="Use Light Mode"
+                                    onClick={() => {
+                                        toggleTheme('light');
+                                    }}
+                                    className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link">
+                                    <BsFillSunFill style={{ color: 'yellow', width: '32px', height: '32px' }} />
+
+                                </button>
+                            </div>
+
+                    }
+
+
+
+
                     <div className='sm:hidden flex flex-1 justify-end items-center'>
                         <img
                             className='w-[28px] h-[28px]  object-contain'
