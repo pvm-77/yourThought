@@ -10,23 +10,30 @@ import Register from './components/Register';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import Notification from './components/Notification';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { getThoughts } from './API/thought';
+import {setThoughts} from './reducers/thoughtReducer';
+import { initializeThoughts } from './reducers/thoughtReducer';
 const App = () => {
+  const dispatch=useDispatch();
   const notificationMessage = useSelector(state => state.notification)
-  const fetchThoughts = async () => {
-    try {
-      const thoughts = await getThoughts();
+  // const fetchThoughts = async () => {
+  //   try {
+      
+  //     const thoughts = await getThoughts();
+  //     dispatch(setThoughts(thoughts))
+      
 
-    } catch (error) {
-      console.log('error in fetch thoughts', error)
+  //   } catch (error) {
+  //     console.log('error in fetch thoughts', error)
 
-    }
+  //   }
 
-  }
+  // }
+
   useEffect(() => {
-    fetchThoughts()
+    initializeThoughts()
   }, [])
 
   return (

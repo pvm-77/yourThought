@@ -1,4 +1,4 @@
-import { nanoid } from "nanoid";
+// import { nanoid } from "nanoid";
 
 // const thoughtsAtStart = [
 //     {
@@ -6575,90 +6575,194 @@ import { nanoid } from "nanoid";
 //     }
 // ]
 
-const thoughtsAtStart = [
-    {
-        text: "Genius is one percent inspiration and ninety-nine percent perspiration.",
-        author: "Thomas Edison"
-    },
-    {
-        text: "You can observe a lot just by watching.",
-        author: "Yogi Berra"
-    },
-    {
-        text: "A house divided against itself cannot stand.",
-        author: "Abraham Lincoln"
-    },
-    {
-        text: "Difficulties increase the nearer we get to the goal.",
-        author: "Johann Wolfgang von Goethe"
-    },
-    {
-        text: "Fate is in your hands and no one elses",
-        author: "Byron Pulsifer"
-    },
-    {
-        text: "Be the chief but never the lord.",
-        author: "Lao Tzu"
-    },]
-const asThought = (thought) => {
-    return {
-        text: thought.text,
-        author: thought.author,
-        id: nanoid(),
-        likes: 0
-    }
+// const thoughtsAtStart = [
+//     {
+//         text: "Genius is one percent inspiration and ninety-nine percent perspiration.",
+//         author: "Thomas Edison"
+//     },
+//     {
+//         text: "You can observe a lot just by watching.",
+//         author: "Yogi Berra"
+//     },
+//     {
+//         text: "A house divided against itself cannot stand.",
+//         author: "Abraham Lincoln"
+//     },
+//     {
+//         text: "Difficulties increase the nearer we get to the goal.",
+//         author: "Johann Wolfgang von Goethe"
+//     },
+//     {
+//         text: "Fate is in your hands and no one elses",
+//         author: "Byron Pulsifer"
+//     },
+//     {
+//         text: "Be the chief but never the lord.",
+//         author: "Lao Tzu"
+//     },]
+// const asThought = (thought) => {
+//     return {
+//         text: thought.text,
+//         author: thought.author,
+//         id: nanoid(),
+//         likes: 0
+//     }
 
-}
+// }
 
-const initialState = thoughtsAtStart.map(asThought);
-const thoughtReducer = (state = initialState, action) => {
-    switch (action.type) {
-        case 'NEW_THOUGHT':
-            return [...state, action.payload];
-        case "LIKE": {
-            const id = action.payload.id;
+// const initialState = thoughtsAtStart.map(asThought);
+// const thoughtReducer = (state = initialState, action) => {
+//     switch (action.type) {
+//         case 'NEW_THOUGHT':
+//             return [...state, action.payload];
+//         case "LIKE": {
+//             const id = action.payload.id;
+//             const thoughtToChange = state.find(thought => thought.id === id)
+//             console.log('th', thoughtToChange)
+//             const changedThought = {
+//                 ...thoughtToChange,
+//                 likes: thoughtToChange.likes + 1
+//             }
+//             return state.map(thought =>
+//                 thought.id !== id ? thought : changedThought)
+//         }
+//         case 'TOGGLE_IMPORTANCE': {
+//             const id = action.payload.id
+//             const noteToChange = state.find(n => n.id === id)
+//             const changedNote = {
+//                 ...noteToChange,
+//                 important: !noteToChange.important
+//             }
+//             return state.map(note =>
+//                 note.id !== id ? note : changedNote
+//             )
+//         }
+
+//         default:
+//             return state;
+//     }
+
+// }
+// export const createThought = (thought) => {
+//     return {
+//         type: 'NEW_THOUGHT',
+//         payload: {
+//             id: nanoid(),
+//             text: thought.text,
+//             author: thought.author,
+//             likes: 0,
+//         }
+//     }
+
+// }
+// export const addLiketo = (id) => {
+//     return {
+//         type: 'LIKE',
+//         payload: { id }
+//     }
+// }
+// export default thoughtReducer
+
+
+
+
+
+
+// redux toolkit version of thoughtReducer
+
+import { createSlice } from "@reduxjs/toolkit";
+import { nanoid } from "nanoid";
+import { createNewThought, getThoughts } from "../API/thought";
+// const thoughtsAtStart = [
+//     {
+//         text: "Genius is one percent inspiration and ninety-nine percent perspiration.",
+//         author: "Thomas Edison"
+//     },
+//     {
+//         text: "You can observe a lot just by watching.",
+//         author: "Yogi Berra"
+//     },
+//     {
+//         text: "A house divided against itself cannot stand.",
+//         author: "Abraham Lincoln"
+//     },
+//     {
+//         text: "Difficulties increase the nearer we get to the goal.",
+//         author: "Johann Wolfgang von Goethe"
+//     },
+//     {
+//         text: "Fate is in your hands and no one elses",
+//         author: "Byron Pulsifer"
+//     },
+//     {
+//         text: "Be the chief but never the lord.",
+//         author: "Lao Tzu"
+//     },]
+// const asThought = (thought) => {
+//     return {
+//         text: thought.text,
+//         author: thought.author,
+//         id: nanoid(),
+//         likes: 0
+//     }
+
+// }
+
+// const initialState = thoughtsAtStart.map(asThought);
+
+const thoughtSlice = createSlice({
+    name: 'thoughts',
+    initialState: [],
+    reducers: {
+        createThought(state, action) {
+            state.push(action.payload)
+        },
+        addLiketo(state, action) {
+            const id = action.payload;
+            console.log('id in addlike to', id)
             const thoughtToChange = state.find(thought => thought.id === id)
-            console.log('th', thoughtToChange)
             const changedThought = {
                 ...thoughtToChange,
                 likes: thoughtToChange.likes + 1
             }
-            return state.map(thought =>
-                thought.id !== id ? thought : changedThought)
-        }
-        case 'TOGGLE_IMPORTANCE': {
-            const id = action.payload.id
-            const noteToChange = state.find(n => n.id === id)
-            const changedNote = {
-                ...noteToChange,
-                important: !noteToChange.important
-            }
-            return state.map(note =>
-                note.id !== id ? note : changedNote
-            )
+            return state.map(thought => thought.id !== id ? thought : changedThought)
+        },
+        appendThought(state, action) {
+            state.push(action.payload)
+
+        },
+        setThoughts(state, action) {
+            return action.payload
         }
 
-        default:
-            return state;
+
+    }
+})
+
+export const {  addLiketo, appendThought, setThoughts } = thoughtSlice.actions
+
+
+
+export const initializeThoughts = () => {
+    return async dispatch => {
+    
+        try {
+            const allThoughts = await getThoughts();
+            dispatch(setThoughts(allThoughts))
+
+        } catch (error) {
+            console.log(error);
+        }
+
+    }
+}
+
+export const createThought=(newThoughtObject)=>{
+    return async dispatch=>{
+        // creteate thought here buddy
+        dispatch(appendThought(await createNewThought(newThoughtObject)))
+
     }
 
 }
-export const createThought = (thought) => {
-    return {
-        type: 'NEW_THOUGHT',
-        payload: {
-            id: nanoid(),
-            text: thought.text,
-            author: thought.author,
-            likes: 0,
-        }
-    }
-
-}
-export const addLiketo = (id) => {
-    return {
-        type: 'LIKE',
-        payload: { id }
-    }
-}
-export default thoughtReducer
+export default thoughtSlice.reducer

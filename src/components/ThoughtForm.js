@@ -1,26 +1,46 @@
 import React from 'react'
 import { useDispatch } from 'react-redux';
 import { createThought } from '../reducers/thoughtReducer';
-import {removeNotification, setNotification} from '../reducers/notificationReducer';
+import { removeNotification, setNotification } from '../reducers/notificationReducer';
+import { createNewThought } from '../API/thought';
 
 const ThoughtForm = () => {
     const dispatch = useDispatch();
-    const addThought = (e) => {
+    const addThought = async (e) => {
         e.preventDefault();
+        // const newThought = {
+        //     text: e.target.thought.value,
+        //     author: e.target.author.value,
+        //     likes: 0
+        // }
+        try {
+            dispatch(createThought({
+                text: e.target.thought.value,
+                author: e.target.author.value,
+                likes: 0
+            }))
 
-        const newThought = {
-            text: e.target.thought.value,
-            author: e.target.author.value,
+        } catch (error) {
+            console.log(error)
+
         }
-        console.log('new thought is ', newThought);
-        dispatch(createThought(newThought));
+        // console.log('new thought is ', newThought);
+
+        // dispatch(createThought(newThought));
+
+
+
+
+
+
+
         // empty fields 
-        e.target.thought.value=''
-        e.target.author.value=''
+        e.target.thought.value = ''
+        e.target.author.value = ''
         dispatch(setNotification('congrats have created a new thought'))
-        setTimeout(()=>{
+        setTimeout(() => {
             dispatch(removeNotification(''))
-        },2000)
+        }, 2000)
 
     }
     return (
