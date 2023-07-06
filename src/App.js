@@ -1,7 +1,6 @@
 import './App.css'
 import ThoughtForm from './components/ThoughtForm';
 import ThoughtList from './components/ThoughtList';
-import VisibilityFilter from './components/VisibilityFilter';
 import Navbar from './components/Navbar';
 import { Routes, Route, BrowserRouter as Router } from 'react-router-dom'
 import About from './components/About';
@@ -12,8 +11,23 @@ import Footer from './components/Footer';
 import Home from './components/Home';
 import Notification from './components/Notification';
 import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { getThoughts } from './API/thought';
 const App = () => {
   const notificationMessage = useSelector(state => state.notification)
+  const fetchThoughts = async () => {
+    try {
+      const thoughts = await getThoughts();
+
+    } catch (error) {
+      console.log('error in fetch thoughts', error)
+
+    }
+
+  }
+  useEffect(() => {
+    fetchThoughts()
+  }, [])
 
   return (
     <div className='h-full w-full relative '>

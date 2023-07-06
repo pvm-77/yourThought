@@ -24,6 +24,7 @@ const ThoughtList = () => {
     const dispatch = useDispatch();
     const handleLike=(id)=>{
         dispatch(addLiketo(id))
+        
         dispatch(setNotification('u have like buddy'));
         setTimeout(()=>{
             dispatch(removeNotification(null))
