@@ -3,7 +3,7 @@
 
 
 const notificationReducer = (state = null, action) => {
-    console.log('notice state is ',state,action.type)
+    // console.log('notice state is ',state,action.type)
     switch (action.type) {
         case 'SET_NOTIFICATION':
             return action.payload;

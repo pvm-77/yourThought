@@ -67,13 +67,12 @@ const Navbar = () => {
     const [toggle, setToggle] = useState(false);
     const [scrolled, setScrolled] = useState(false)
     const { theme, toggleTheme } = useContext(ThemeContext);
-    console.log('theme is', theme)
     useEffect(() => {
         document.documentElement.style.colorScheme = theme
     }, [theme]);
     return (
         <>
-            <nav className='w-full flex items-center border border-sky-950 py-5  z-20'>
+            <nav className=' top-0 mb-3 w-full flex items-center border bg-gray-800 border-sky-950 py-2   z-20'>
                 <div className='w-full flex justify-between items-center max-w-7xl mx-auto'>
                     <Link to='/'>
                         {/* <img className='w-9 h-9 object-contain' src='some' alt='brand' /> */}
@@ -98,7 +97,7 @@ const Navbar = () => {
                                         toggleTheme('dark');
                                     }}
                                     className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link">
-                                    < BsFillMoonFill style={{ color: 'yellow', width: '32px', height: '32px' }} />
+                                    < BsFillMoonFill style={{ color: 'yellow', width: '16px', height: '16px' }} />
                                 </button>
                             </div>
 
@@ -111,7 +110,7 @@ const Navbar = () => {
                                         toggleTheme('light');
                                     }}
                                     className="active:scale-95 transition-transform flex w-12 h-12 rounded-full items-center justify-center hover:bg-primary/5 hover:dark:bg-primary-dark/5 outline-link">
-                                    <BsFillSunFill style={{ color: 'yellow', width: '32px', height: '32px' }} />
+                                    <BsFillSunFill style={{ color: 'yellow', width: '16px', height: '16px' }} />
 
                                 </button>
                             </div>

@@ -6745,15 +6745,7 @@ export const {  addLiketo, appendThought, setThoughts } = thoughtSlice.actions
 
 export const initializeThoughts = () => {
     return async dispatch => {
-    
-        try {
-            const allThoughts = await getThoughts();
-            dispatch(setThoughts(allThoughts))
-
-        } catch (error) {
-            console.log(error);
-        }
-
+            dispatch(setThoughts(await getThoughts()))
     }
 }
 

@@ -19,7 +19,7 @@ const Register = () => {
   }
   return (
     <div className=''>
-      <div className='py-3 px-5 my-3 mx-5 rounded-lg shadow-2xl'>
+      <div className='bg-gray-800 py-3 px-5 my-3 mx-5 rounded-lg shadow-2xl'>
         <div className='signup-form-header'>
           <Link to='/' className='item back-arrow-animation'>
             <img className='arrow' src={''} alt='back' />

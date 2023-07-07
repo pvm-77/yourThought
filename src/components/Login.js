@@ -12,7 +12,7 @@ const Login = () => {
     setShowPassword(!showPassword)
   }
   return (
-    <div className='signup-form-wrapper mx-auto w-full sm:w-1/2  shadow-2xl' >
+    <div className='mt-10 bg-gray-800  min-h-screen signup-form-wrapper mx-auto w-full sm:w-1/2  shadow-2xl' >
       <div className='signup-form-container'>
         <div className='signup-form-header  flex items-center content-start mb-4'  >
           <Link to='/' className='item back-arrow-animation'>

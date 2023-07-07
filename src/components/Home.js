@@ -1,14 +1,97 @@
 import React from 'react'
+import t1 from '../t1.jpg'
+import t3 from '../t3.jpg'
+import t2 from '../t2wobg.png';
+import Typewriter from 'typewriter-effect';
+
 
 const Home = () => {
     return (
         <>
-            <div className="landing-page">
+
+<div className="thought-container bg-slate-950 animate-pulse">
+  <div className="user-content">
+    <div className="user-item">
+      <div className="w-12 h-12 bg-gray-300 rounded-full"></div>
+    </div>
+    <div className="user-item">
+      <div className="h-4 bg-gray-300 rounded w-16 mt-1"></div>
+      <div className="h-3 bg-gray-300 rounded w-24 mt-1"></div>
+    </div>
+  </div>
+  <div className="thought-content">
+    <blockquote>
+      <div className="h-6 bg-gray-300 rounded w-3/4 mt-2"></div>
+      <div className="h-3 bg-gray-300 rounded w-1/2 mt-1"></div>
+    </blockquote>
+  </div>
+  <div>
+    <div>
+      <span className="small-text animate-pulse">0</span>
+    </div>
+  </div>
+  <div className="thought-content-footer">
+    <div className="thought-footer-item">
+      <button className="btn animate-pulse">
+        {/* <AiOutlineLike /> */}
+      </button>
+      <span className="small-text animate-pulse">like</span>
+    </div>
+    <div className="thought-footer-item">
+      <button className="btn animate-pulse">
+        {/* <BiShare /> */}
+      </button>
+      <span className="small-text animate-pulse">share</span>
+    </div>
+    <div className="thought-footer-item">
+      <button className="btn animate-pulse">
+        {/* <FaRegComments /> */}
+      </button>
+      <span className="small-text animate-pulse">comment</span>
+    </div>
+  </div>
+</div>
+
+            <div className="landing-page ">
+                <div class="bg-gray-200 rounded animate-pulse">
+                    <div class="h-6 bg-gray-300 rounded w-1/2 mt-2 animate-pulse"></div>
+                    <div class="h-4 bg-gray-300 rounded w-3/4 mt-2 animate-pulse"></div>
+                    <div class="h-4 bg-gray-300 rounded w-1/3 mt-2 animate-pulse"></div>
+                </div>
+
+                <div className=' '>
+                    <div className=' text-center'>
+                        <Typewriter
+
+                            options={{
+                                strings: [
+                                    '<span class="text-cyan-900 text-5xl font-bold">Welcome to My Thoughts App</span>',
+                                    '<span class="text-cyan-900 text-5xl">A place to create and organize your thoughts</span>'
+                                ],
+                                autoStart: true,
+                                loop: true,
+                                spanClassBack: 'text-green-500',
+                                spanClassDelete: 'text-yellow-500'
+                            }}
+                        />
+
+                    </div>
+
+                    <div className=' mt-3 flex items-start justify-center'>
+
+                        <img src={t2} alt='t1' className='animate-spin-vertical ' />
+
+
+                    </div>
+                </div>
+
+
                 <header className="hero-section">
                     <h1>Welcome to My Thoughts App</h1>
                     <p>A place to create and organize your thoughts</p>
                     <button className="cta-button">Get Started</button>
                 </header>
+                {/* <img src={t2} alt='t1' className='animate-spin-vertical' /> */}
 
                 <section className="features-section">
                     <h2>Key Features</h2>

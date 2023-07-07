@@ -6,7 +6,7 @@ import { addLiketo } from '../reducers/thoughtReducer';
 import Thought from './Thought';
 import VisibilityFilter from './VisibilityFilter';
 import { removeNotification, setNotification } from '../reducers/notificationReducer';
-console.log('add like in thoughtlist ',addLiketo)
+import ThoughtForm from './ThoughtForm';
 
 const ThoughtList = () => {
     // const thoughts = useSelector(state => state.thoughts);
@@ -25,7 +25,7 @@ const ThoughtList = () => {
     const dispatch = useDispatch();
     // const handleLike=(id)=>{
     //     dispatch(addLiketo(id))
-        
+
     //     dispatch(setNotification('u have like buddy'));
     //     setTimeout(()=>{
     //         dispatch(removeNotification(null))
@@ -34,6 +34,7 @@ const ThoughtList = () => {
 
     return (
         <>
+            <ThoughtForm />
             <VisibilityFilter />
             <h2 style={{ textAlign: 'center' }}>thoughts</h2>
             {thoughts.map(thought =>

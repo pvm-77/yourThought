@@ -202,3 +202,42 @@
       -2.6em 0em 0 0em rgba(255, 255, 255, 0.7), -1.8em -1.8em 0 0em #ffffff;
   }
 }
+
+
+@keyframes custom-animation {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.custom-animation {
+  animation-name: custom-animation;
+  animation-duration: 4s; /* Adjust as needed */
+  animation-timing-function: linear; /* Adjust as needed */
+  animation-iteration-count: infinite; /* Adjust as needed */
+}
+
+@keyframes spin-vertical {
+  0% {
+    transform: rotateY(0);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+.animate-spin-vertical {
+  animation-name: spin-vertical;
+  animation-duration: 5s; /* Adjust as needed */
+  animation-timing-function: ease-in-out; /* Adjust as needed */
+  animation-iteration-count: infinite; /* Adjust as needed */
+}

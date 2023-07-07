@@ -44,20 +44,24 @@ const ThoughtForm = () => {
 
     }
     return (
-        <div className='thought-container'>
-            <form onSubmit={addThought}>
-                <div>
-                    <h2>what's the new thought you have?</h2>
+        <div className='shadow-lg  mb-4 bg-slate-800  sm:w-1/2 mx-auto p-3 rounded-lg flex items-center content-center    w-90 '>
+            <form onSubmit={addThought} className='
+            
+            w-full
+            '>
+                <div className=' mt-1'>
+                    <h2 className='text-white text-3xl'>what's the new thought you have?</h2>
                 </div>
-                <div>
+                <div className=' w-full m-1'>
 
-                    <textarea placeholder='your thought text here' name='thought' />
+                    <textarea className='w-3/4 bg-cyan-950 rounded h-20 pl-2 focus:outline' placeholder='your thought text here' name='thought' />
 
                 </div>
-                <div>
-                    <input placeholder='author name here' name='author' />
+                <div className=' w-full m-1'>
+                    <input className=' w-3/4 bg-cyan-950 rounded h-10  pl-2 focus:outline' placeholder=' author name here' name='author' />
                 </div>
-                <button type='submit'>create</button>
+
+                <button className='h-10 m-1 w-1/2 bg-violet-500 hover:bg-violet-600 active:bg-violet-700 focus:outline-none focus:ring focus:ring-violet-300 rounded' type='submit'>create</button>
             </form>
         </div>
     )

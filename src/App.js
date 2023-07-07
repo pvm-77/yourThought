@@ -18,22 +18,22 @@ import { initializeThoughts } from './reducers/thoughtReducer';
 const App = () => {
   const dispatch=useDispatch();
   const notificationMessage = useSelector(state => state.notification)
-  // const fetchThoughts = async () => {
-  //   try {
+  const fetchThoughts = async () => {
+    try {
       
-  //     const thoughts = await getThoughts();
-  //     dispatch(setThoughts(thoughts))
+      const thoughts = await getThoughts();
+      dispatch(setThoughts(thoughts))
       
 
-  //   } catch (error) {
-  //     console.log('error in fetch thoughts', error)
+    } catch (error) {
 
-  //   }
+    }
 
-  // }
+  }
 
   useEffect(() => {
-    initializeThoughts()
+    // initializeThoughts()
+    fetchThoughts()
   }, [])
 
   return (
