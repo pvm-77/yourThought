@@ -1,0 +1,11 @@
+Model Information:
+* title:	Notebook chat / Блокнот чат
+* source:	https://sketchfab.com/3d-models/notebook-chat-cf8e865e710c4c6da3d09bfd417c964c
+* author:	marishka1611 (https://sketchfab.com/marishka1611)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Notebook chat / Блокнот чат" (https://sketchfab.com/3d-models/notebook-chat-cf8e865e710c4c6da3d09bfd417c964c) by marishka1611 (https://sketchfab.com/marishka1611) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

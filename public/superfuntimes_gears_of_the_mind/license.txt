@@ -1,0 +1,11 @@
+Model Information:
+* title:	Superfuntimes Gears of The Mind
+* source:	https://sketchfab.com/3d-models/superfuntimes-gears-of-the-mind-fb0557e2f68e4d5b8f2d260ee5a9673d
+* author:	SuperfuntimesV (https://sketchfab.com/videshi)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Superfuntimes Gears of The Mind" (https://sketchfab.com/3d-models/superfuntimes-gears-of-the-mind-fb0557e2f68e4d5b8f2d260ee5a9673d) by SuperfuntimesV (https://sketchfab.com/videshi) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

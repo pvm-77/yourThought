@@ -1,7 +1,8 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { addLiketo } from '../reducers/thoughtReducer';
-
+import { Suspense } from 'react';
+import ThoughtFallback from '../loaders/ThoughtFallback';
 
 import Thought from './Thought';
 import VisibilityFilter from './VisibilityFilter';
@@ -36,10 +37,13 @@ const ThoughtList = () => {
         <>
             <ThoughtForm />
             <VisibilityFilter />
+
             <h2 style={{ textAlign: 'center' }}>thoughts</h2>
-            {thoughts.map(thought =>
-                <Thought key={thought.id} thought={thought} onClick={() => dispatch(addLiketo(thought.id))} />
-            )}
+            <Suspense fallback={<ThoughtFallback />}>
+                {thoughts.map(thought =>
+                    <Thought key={thought.id} thought={thought} onClick={() => dispatch(addLiketo(thought.id))} />
+                )}
+            </Suspense>
         </>
     )
 }

@@ -1,0 +1,11 @@
+Model Information:
+* title:	Papers
+* source:	https://sketchfab.com/3d-models/papers-1356e831277647098c204be4b0edf65c
+* author:	I am Cassia (https://sketchfab.com/iamCassia)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Papers" (https://sketchfab.com/3d-models/papers-1356e831277647098c204be4b0edf65c) by I am Cassia (https://sketchfab.com/iamCassia) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

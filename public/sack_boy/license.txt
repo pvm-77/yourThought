@@ -1,0 +1,11 @@
+Model Information:
+* title:	Sack boy
+* source:	https://sketchfab.com/3d-models/sack-boy-8edc8ecca2bf4053aa0f45f392d5dd8b
+* author:	Al (https://sketchfab.com/lightningocelot)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Sack boy" (https://sketchfab.com/3d-models/sack-boy-8edc8ecca2bf4053aa0f45f392d5dd8b) by Al (https://sketchfab.com/lightningocelot) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
