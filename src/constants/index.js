@@ -1,18 +1,22 @@
+import { TfiThought } from 'react-icons/tfi';
+import { VscSignIn, VscSignOut } from 'react-icons/vsc';
+import { FcAbout } from 'react-icons/fc'
+
 export const navLinks = [
     {
         id: "about",
         title: "About",
+        icon: <FcAbout/>
     },
     {
         id: "thoughts",
-        title: "Thoughts",
+        title: "Thoughts",icon:<TfiThought />
+    },
+
+    {
+        id: 'login', title: 'Login',icon:<VscSignIn/>
     },
     {
-        id:'createNewThought',title:'createThought'
+        id: 'signup', title: 'Signup',icon:<VscSignOut/>
     },
-    {
-        id: "contact",
-        title: "Contact",
-    },
-    {id:'login',title:'Login'},{id:'signup',title:'Signup'},
 ];

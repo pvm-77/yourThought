@@ -12,7 +12,7 @@ const Thought = ({ thought, onClick }) => {
         <>
             
             
-            <div className='thought-container bg-slate-950'>
+            <div className='thought-container '>
                 <div className='user-content'>
                     <div className='user-item'>
                         <img src='https://elouwerse.nl/placecircle/50' alt='user' />

@@ -1,5 +1,6 @@
 
 import axios from "axios";
+import data from '../db.json';
 
 // const url = 'https://65ry7y-3000.csb.app/';
 // const url = 'https://samplethought.onrender.com/';
@@ -10,7 +11,9 @@ export const getThoughts = async () => {
     const response = await axios.get(url);
     return response.data; // Return the actual data from the response
   } catch (error) {
-    console.error('Error in fetch thoughts', error);
+    // console.error('Error in fetch thoughts', error);
+    return data.thoughts
+
 
   }
 };

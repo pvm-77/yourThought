@@ -15,6 +15,8 @@ import { useEffect } from 'react';
 import { getThoughts } from './API/thought';
 import {setThoughts} from './reducers/thoughtReducer';
 import { initializeThoughts } from './reducers/thoughtReducer';
+// its a heck if unable to hit api static data from db.json
+
 const App = () => {
   const dispatch=useDispatch();
   const notificationMessage = useSelector(state => state.notification)
@@ -23,19 +25,15 @@ const App = () => {
       
       const thoughts = await getThoughts();
       dispatch(setThoughts(thoughts))
-      
-
     } catch (error) {
-
+      console.log(error);
     }
-
   }
 
   useEffect(() => {
     // initializeThoughts()
     fetchThoughts()
   }, [])
-
   return (
     <div className='h-full w-full relative '>
       <Router>
@@ -46,12 +44,9 @@ const App = () => {
 
           <Route path='/about' element={<About />} />
           <Route path='/thoughts' element={<ThoughtList />} />
-          <Route path='/thoughts/:id' element={<Thought />} />
-          <Route path='/createNewThought' element={<ThoughtForm />} />
           <Route path='/login' element={<Login />} />
           <Route path='/signup' element={<Register />} />
         </Routes>
-
         <Footer />
       </Router>
     </div>

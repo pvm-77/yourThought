@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+
 // const Navbar = () => {
 //     const [user,setUser]=useState(null);
 //     const handleLogout=()=>{
@@ -82,7 +83,7 @@ const Navbar = () => {
                     </Link>
                     <ul className='list-none hidden sm:flex flex-row gap-10  '>
                         {navLinks.map(nav => <li key={nav.id}>
-                            <Link to={`/${nav.id}`}>{nav.title}</Link>
+                            <Link to={`/${nav.id}`}>  {nav.title}</Link>
                         </li>)}
                     </ul>
 
